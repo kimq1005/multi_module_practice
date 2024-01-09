@@ -24,8 +24,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
+    val url = BuildConfig.BaseUrl
     Text(
-        text = "Hello $name!",
+        text = "Hello ! $url",
         modifier = modifier
     )
 }

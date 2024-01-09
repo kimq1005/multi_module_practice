@@ -20,13 +20,29 @@ android {
         }
     }
 
+
+
     buildTypes {
+
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+
+    flavorDimensions += "version"
+
+    productFlavors {
+        create("dev") {
+            buildConfigField("String" , "BaseUrl" , "\"www.this.dev\"")
+
+        }
+
+        create("prod") {
+            buildConfigField("String" , "BaseUrl" , "\"www.this.prod\"")
         }
     }
     compileOptions {
@@ -37,6 +53,7 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -47,6 +64,8 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+
 }
 
 dependencies {

@@ -9,6 +9,7 @@ java {
 }
 
 dependencies {
-
+//    implementation(project(":data"))
+    implementation(libs.bundles.coroutine)
 
 }

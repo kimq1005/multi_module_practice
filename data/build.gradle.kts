@@ -24,6 +24,10 @@ android {
             )
         }
     }
+
+    flavorDimensions += "version"
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -34,10 +38,19 @@ android {
 }
 
 dependencies {
-    //project
+
     implementation(project(":domain"))
 
+
+    androidTestImplementation(libs.bundles.androidTest)
+    testImplementation(libs.junit)
     implementation(libs.bundles.android)
     implementation(libs.bundles.retrofit)
 
+    //hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    //coroutine
+    implementation(libs.bundles.coroutine)
 }

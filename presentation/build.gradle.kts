@@ -30,6 +30,24 @@ android {
             )
         }
     }
+
+//    buildFeatures {
+//        buildConfig = true
+//    }
+//
+//    flavorDimensions += "version"
+//
+//    productFlavors {
+//        create("dev") {
+//            buildConfigField("String" , "BaseUrl" , "\"www.this.dev\"")
+//
+//        }
+//
+//        create("prod") {
+//            buildConfigField("String" , "BaseUrl" , "\"www.this.prod\"")
+//        }
+//    }
+
     externalNativeBuild {
         cmake {
             path("src/main/cpp/CMakeLists.txt")
@@ -58,7 +76,9 @@ dependencies {
     implementation(project(":domain"))
 
     implementation(libs.bundles.android)
-    testImplementation(libs.bundles.test)
+    implementation(libs.monitor)
+    androidTestImplementation(libs.bundles.androidTest)
+    testImplementation(libs.junit)
     implementation(platform(libs.compose.bom))
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
