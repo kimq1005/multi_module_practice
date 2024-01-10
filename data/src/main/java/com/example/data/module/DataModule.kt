@@ -24,13 +24,33 @@ object DataModule {
     @Retention(AnnotationRetention.RUNTIME)
     annotation class MyOkhttpClient
 
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class INTERCEPTOR
+
+    @Provides
+    @Singleton
+    @INTERCEPTOR
+    fun provideInterceptor() = Interceptor {  chain ->
+        with(chain){
+            val newRequest = request().newBuilder()
+                .addHeader("Authorization", BEARER_TOKEN)
+                .build()
+            proceed(newRequest)
+        }
+    }
+    //
+
     @Provides
     @Singleton
     @MyOkhttpClient
-    fun OkHttpClient() = OkHttpClient.Builder()
+    fun okHttpClient(
+        @INTERCEPTOR interceptor: Interceptor
+    ) = OkHttpClient.Builder()
         .readTimeout(10, TimeUnit.SECONDS)
         .connectTimeout(10, TimeUnit.SECONDS)
         .writeTimeout(15, TimeUnit.SECONDS)
+        .addInterceptor(interceptor)
         .build()
 
     @Provides
