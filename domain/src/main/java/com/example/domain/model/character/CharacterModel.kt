@@ -1,8 +1,10 @@
 package com.example.domain.model.character
 
+import java.io.Serializable
+
 data class CharacterModel(
-    val characterList : List<CharaterModelItem>
-)
+    val characterList: List<CharaterModelItem>
+) : Serializable
 
 data class CharaterModelItem(
     val CharacterClassName: String,
@@ -11,4 +13,4 @@ data class CharaterModelItem(
     val ItemAvgLevel: String,
     val ItemMaxLevel: String,
     val ServerName: String
-)
+) : Serializable

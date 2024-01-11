@@ -7,7 +7,7 @@ import retrofit2.http.Path
 interface LostArkService {
     @GET("/characters/{characters}/siblings")
     fun getCharacter(
-        @Path("characters") characters:String
-    ) : CharacterModel
+        @Path("characters") characters: String
+    ): CharacterModel
 
 }

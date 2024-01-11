@@ -11,6 +11,9 @@ retrofit = "2.9.0"
 okhttp = "4.10.0"
 etx_junit = "1.1.5"
 coroutine = "1.7.3"
+agp = "8.1.3"
+org-jetbrains-kotlin-android = "1.8.10"
+paging = "3.1.1"
 
 
 
@@ -32,6 +35,7 @@ compose-material3 = { module = "androidx.compose.material3:material3" }
 android-core = { module = "androidx.core:core-ktx", version.ref = "core" }
 android-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
+androidx-paging-common = { module = "androidx.paging:paging-common", version.ref = "paging" }
 
 #testImple
 junit = { module = "junit:junit", version.ref = "junit" }
@@ -51,6 +55,8 @@ monitor = { group = "androidx.test", name = "monitor", version = "1.6.1" }
 #coroutine
 coroutine = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }
 coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
+
+javax-inject = { module = "javax.inject:javax.inject", version = "1" }
 
 [bundles]
 android = [
@@ -74,4 +80,7 @@ hilt = ["hilt-android", "hilt-compiler"]
 retrofit = ["retrofit", "retrofit-converter", "retrofit-gson-converter"]
 okhttp = ["okhttp", "okhttp-interceptor"]
 coroutine = ["coroutine", "coroutine-core"]
+[plugins]
+com-android-library = { id = "com.android.library", version.ref = "agp" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
 

@@ -1,6 +1,7 @@
 plugins {
     id("java-library")
     id("org.jetbrains.kotlin.jvm")
+    id("kotlin-kapt")
 }
 
 java {
@@ -8,8 +9,11 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
+
 dependencies {
-//    implementation(project(":data"))
     implementation(libs.bundles.coroutine)
+    //hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
 }
