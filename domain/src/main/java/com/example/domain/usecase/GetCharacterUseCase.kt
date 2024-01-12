@@ -6,6 +6,8 @@ import com.example.domain.repository.LostArkRepo
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 
-//class GetCharacterUseCase @Inject constructor(private val lostArkRepo: LostArkRepo) {
-//    suspend fun invoke(characterName: String) = lostArkRepo.getCharacter(characterName)
-//}
+class GetCharacterUseCase(private val repository: LostArkRepo) {
+    suspend fun invoke(characters: String): Flow<Outcome<CharacterModel>> {
+        return repository.getCharacter(characters)
+    }
+}

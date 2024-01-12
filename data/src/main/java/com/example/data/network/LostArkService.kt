@@ -10,4 +10,5 @@ interface LostArkService {
         @Path("characters") characters: String
     ): CharacterModel
 
+
 }

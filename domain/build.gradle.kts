@@ -13,7 +13,6 @@ java {
 dependencies {
     implementation(libs.bundles.coroutine)
     //hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+
 
 }

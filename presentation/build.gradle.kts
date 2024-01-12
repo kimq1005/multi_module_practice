@@ -74,9 +74,11 @@ android {
 dependencies {
     //project
     implementation(project(":domain"))
+    implementation(project(":common"))
 
     implementation(libs.bundles.android)
     implementation(libs.monitor)
+    implementation(libs.viewModel)
     androidTestImplementation(libs.bundles.androidTest)
     testImplementation(libs.junit)
     implementation(platform(libs.compose.bom))

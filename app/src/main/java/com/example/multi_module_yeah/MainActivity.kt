@@ -10,14 +10,21 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.multi_module_yeah.ui.theme.Multi_module_yeahTheme
 import com.example.presentation.TestScreen
+import com.example.presentation.lostArkCharacter.CharacterMainScreen
+import com.example.presentation.lostArkCharacter.LostArkCharacterViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TestScreen()
+            val viewModel :LostArkCharacterViewModel = hiltViewModel()
+            CharacterMainScreen(viewModel )
+//            TestScreen()
         }
     }
 }
