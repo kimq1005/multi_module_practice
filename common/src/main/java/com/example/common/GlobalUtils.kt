@@ -7,4 +7,4 @@ object GlobalUtils {
 }
 
 fun logFunctions(msg: String) = Log.d("functions", msg)
-//1월 16일 pull Request test
+//1월 16일 pull Request test dev_qa
