@@ -7,7 +7,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 
 class GetCharacterUseCase(private val repository: LostArkRepo) {
-    suspend fun invoke(characters: String): Flow<Outcome<CharacterModel>> {
-        return repository.getCharacter(characters)
-    }
+    suspend operator fun invoke(characters: String): Flow<Outcome<CharacterModel>> =
+        repository.getCharacter(characters)
+
 }

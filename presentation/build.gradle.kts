@@ -75,6 +75,7 @@ dependencies {
     //project
     implementation(project(":domain"))
     implementation(project(":common"))
+//    implementation(project(":usecaseModule"))
 
     implementation(libs.bundles.android)
     implementation(libs.monitor)

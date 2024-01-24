@@ -1,23 +1,23 @@
-package com.example.usecasemodule.usecaseModule
+package com.example.data.module
 
 import com.example.data.network.LostArkService
+import com.example.data.repository.LostArkImpl
 import com.example.domain.repository.LostArkRepo
-import com.example.domain.usecase.GetCharacterUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+
 @Module
 @InstallIn(SingletonComponent::class)
-object LostArkModule {
+object LostArkRepositoryModule{
+
     @Provides
     @Singleton
-    fun provideGetCharacterUseCase(
-        lostArkRepo: LostArkRepo
-    ): GetCharacterUseCase {
-        return GetCharacterUseCase(lostArkRepo)
+    fun provideLostArkRepositoryModule(lostArkService: LostArkService) : LostArkRepo {
+        return LostArkImpl(lostArkService)
     }
 
 }

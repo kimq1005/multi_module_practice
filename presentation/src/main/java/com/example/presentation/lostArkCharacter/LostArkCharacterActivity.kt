@@ -12,8 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.presentation.globalScreen.SpacerHeight
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LostArkCharacterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +34,10 @@ fun CharacterMainScreen(viewModel: LostArkCharacterViewModel) {
     Column(modifier = Modifier.fillMaxSize()) {
         val activity = LocalContext.current as Activity
         Text(text = "안녕하세요 호호호")
-        LaunchedEffect(activity){
-            viewModel.getCharacter()
-        }
+
+        SpacerHeight(dp = 10.dp)
+
+
     }
+
 }

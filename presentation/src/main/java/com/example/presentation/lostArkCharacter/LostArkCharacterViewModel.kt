@@ -19,11 +19,5 @@ class LostArkCharacterViewModel @Inject constructor(
 
     private val _nickName = MutableStateFlow("")
     val nickName: StateFlow<String> = _nickName.asStateFlow()
-    fun getCharacter() {
-        viewModelScope.launch {
-            characterUseCase.invoke("승횬2").collect {
-                logFunctions("$it")
-            }
-        }
-    }
+
 }

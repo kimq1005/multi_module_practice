@@ -1,6 +1,7 @@
 package com.example.data.module
 
 import com.example.common.GlobalUtils
+import com.example.data.network.LostArkService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -62,5 +63,10 @@ object DataModule {
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
+    }
+
+    @Provides
+    fun provideLostArkService(retrofit: Retrofit) : LostArkService {
+        return retrofit.create(LostArkService::class.java)
     }
 }

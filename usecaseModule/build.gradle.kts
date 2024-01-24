@@ -47,8 +47,8 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
-    implementation(project(":domain"))
-    implementation(project(":common"))
-    implementation(project(":presentation"))
-    implementation(project(":data"))
+//    implementation(project(":domain"))
+//    implementation(project(":common"))
+//    implementation(project(":presentation"))
+//    implementation(project(":data"))
 }
