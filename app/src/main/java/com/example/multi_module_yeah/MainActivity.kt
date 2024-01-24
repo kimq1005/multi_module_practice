@@ -24,6 +24,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val viewModel :LostArkCharacterViewModel = hiltViewModel()
             CharacterMainScreen(viewModel )
+            //yeah
 //            TestScreen()
         }
     }
